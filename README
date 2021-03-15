@@ -12,3 +12,13 @@ function:
             sin(2*M_PI * 440 * tick++/sr);
 
 Where tick is the iteration, and sr is the sample rate of jack.
+
+The sound was contstructed by computing different sounds and storing them into
+a 2D lookup table. The purpose of this is to give us an entire spectrum of 
+oscillating sounds, which is the main idea behind our sound synthesizer.
+Oscillating sound was created by evaluating sin/cos functions so that the 
+values placed at each index can periodically repeat. The range of values used 
+in the calculations were from [-1, 1). The index values in the 2D lookup table 
+was calculated based on this range such that a value of 1.5 evaluates to -0.5. 
+After the values were formulaically calculated, they were placed into their
+respective position in the 2D table.
