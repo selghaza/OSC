@@ -1,0 +1,14 @@
+The main source file in the directory is sin.c
+It was meant to be an interactive sound synthesizer where the position
+of the mouse controls the frequency of the output sound. Unfortunately,
+I was not able to implement this portion. When make is run, it generates
+two executables, one called sin and the other sdl. sdl contains the logic
+for recording mouse position, but I ran out of time and was unable to 
+successfully integrate it into my main script, sin, which outputs the 
+sound.
+
+When you run ./sin it generates a sound evaulates using the following
+function:
+            sin(2*M_PI * 440 * tick++/sr);
+
+Where tick is the iteration, and sr is the sample rate of jack.
